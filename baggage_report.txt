@@ -1,0 +1,48 @@
+Log Monitor Report - 2025-09-28 05:21:48 UTC
+
+failed_per_ip: {}
+requests_per_ip: {}
+errors_per_ip: {'ScannerA': 38, 'ScannerB': 47, 'Belt02': 49, 'Sorter01': 28, 'Belt01': 38}
+
+ALERTS:
+ - ScannerA: 38 errors
+ - ScannerB: 47 errors
+ - Belt02: 49 errors
+ - Sorter01: 28 errors
+ - Belt01: 38 errors
+
+Suspicious lines (sample):
+ScannerA:
+    2025-09-27 10:00:00 ScannerA ERROR Connection timeout with PLC
+    2025-09-27 10:00:30 ScannerA ERROR Bag misrouted to wrong gate
+    2025-09-27 10:07:00 ScannerA ERROR Barcode reader failure
+    2025-09-27 10:07:12 ScannerA ERROR Temperature sensor fault
+    2025-09-27 10:03:48 ScannerA ERROR Bag misrouted to wrong gate
+
+ScannerB:
+    2025-09-27 10:00:05 ScannerB ERROR Connection timeout with PLC
+    2025-09-27 10:02:00 ScannerB ERROR Connection timeout with PLC
+    2025-09-27 10:01:17 ScannerB ERROR Motor overload detected
+    2025-09-27 10:01:18 ScannerB ERROR Barcode reader failure
+    2025-09-27 10:01:24 ScannerB ERROR Unexpected shutdown
+
+Belt02:
+    2025-09-27 10:00:26 Belt02 ERROR Conveyor jam detected
+    2025-09-27 10:00:45 Belt02 ERROR Bag misrouted to wrong gate
+    2025-09-27 10:00:42 Belt02 ERROR Unexpected shutdown
+    2025-09-27 10:01:28 Belt02 ERROR Connection timeout with PLC
+    2025-09-27 10:01:00 Belt02 ERROR Barcode reader failure
+
+Sorter01:
+    2025-09-27 10:00:48 Sorter01 ERROR Temperature sensor fault
+    2025-09-27 10:01:25 Sorter01 ERROR Connection timeout with PLC
+    2025-09-27 10:05:20 Sorter01 ERROR Connection timeout with PLC
+    2025-09-27 10:07:42 Sorter01 ERROR Barcode reader failure
+    2025-09-27 10:08:01 Sorter01 ERROR Unexpected shutdown
+
+Belt01:
+    2025-09-27 10:01:24 Belt01 ERROR Emergency stop pressed
+    2025-09-27 10:01:12 Belt01 ERROR Conveyor jam detected
+    2025-09-27 10:03:28 Belt01 ERROR Connection timeout with PLC
+    2025-09-27 10:01:30 Belt01 ERROR Unexpected shutdown
+    2025-09-27 10:04:00 Belt01 ERROR Conveyor jam detected

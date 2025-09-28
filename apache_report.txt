@@ -1,0 +1,53 @@
+Log Monitor Report - 2025-09-28 05:05:04 UTC
+
+failed_per_ip: {}
+requests_per_ip: {'192.168.1.10': 51, '198.51.100.23': 37, '10.0.0.7': 37, '172.16.0.9': 45, '203.0.113.5': 30}
+errors_per_ip: {'198.51.100.23': 5, '203.0.113.5': 8, '10.0.0.7': 8, '172.16.0.9': 6, '192.168.1.10': 5}
+
+ALERTS:
+ - 192.168.1.10: 51 requests (high volume)
+ - 198.51.100.23: 37 requests (high volume)
+ - 10.0.0.7: 37 requests (high volume)
+ - 172.16.0.9: 45 requests (high volume)
+ - 203.0.113.5: 30 requests (high volume)
+ - 198.51.100.23: 5 errors
+ - 203.0.113.5: 8 errors
+ - 10.0.0.7: 8 errors
+ - 172.16.0.9: 6 errors
+ - 192.168.1.10: 5 errors
+
+Suspicious lines (sample):
+198.51.100.23:
+    198.51.100.23 - charlie [27/Sep/2025:15:23:16 +0000] "PUT /index.html HTTP/1.1" 500 4567 "curl/7.68.0"
+    198.51.100.23 - alice [27/Sep/2025:15:23:13 +0000] "DELETE /index.html HTTP/1.1" 500 1831 "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    198.51.100.23 - alice [27/Sep/2025:15:23:53 +0000] "POST /index.html HTTP/1.1" 500 4623 "curl/7.68.0"
+    198.51.100.23 - charlie [27/Sep/2025:15:24:40 +0000] "PUT /login HTTP/1.1" 500 3938 "curl/7.68.0"
+    198.51.100.23 - dave [27/Sep/2025:15:25:39 +0000] "POST /admin HTTP/1.1" 500 4619 "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+
+203.0.113.5:
+    203.0.113.5 - bob [27/Sep/2025:15:23:29 +0000] "POST /admin HTTP/1.1" 500 1514 "curl/7.68.0"
+    203.0.113.5 - alice [27/Sep/2025:15:23:29 +0000] "PUT /admin HTTP/1.1" 500 4718 "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    203.0.113.5 - dave [27/Sep/2025:15:27:31 +0000] "PUT /admin HTTP/1.1" 500 2347 "curl/7.68.0"
+    203.0.113.5 - bob [27/Sep/2025:15:30:51 +0000] "GET /login HTTP/1.1" 500 988 "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    203.0.113.5 - - [27/Sep/2025:15:33:37 +0000] "POST /admin HTTP/1.1" 500 3462 "curl/7.68.0"
+
+10.0.0.7:
+    10.0.0.7 - - [27/Sep/2025:15:23:27 +0000] "GET /login HTTP/1.1" 500 3238 "PostmanRuntime/7.26.8"
+    10.0.0.7 - alice [27/Sep/2025:15:26:53 +0000] "PUT /dashboard HTTP/1.1" 500 261 "curl/7.68.0"
+    10.0.0.7 - bob [27/Sep/2025:15:25:49 +0000] "GET /api/data HTTP/1.1" 500 648 "curl/7.68.0"
+    10.0.0.7 - alice [27/Sep/2025:15:28:22 +0000] "PUT /dashboard HTTP/1.1" 500 4197 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+    10.0.0.7 - - [27/Sep/2025:15:24:50 +0000] "GET /dashboard HTTP/1.1" 500 424 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+
+172.16.0.9:
+    172.16.0.9 - charlie [27/Sep/2025:15:23:29 +0000] "DELETE /admin HTTP/1.1" 500 2322 "PostmanRuntime/7.26.8"
+    172.16.0.9 - dave [27/Sep/2025:15:24:51 +0000] "POST /status HTTP/1.1" 500 3045 "curl/7.68.0"
+    172.16.0.9 - - [27/Sep/2025:15:27:10 +0000] "POST /dashboard HTTP/1.1" 500 4891 "curl/7.68.0"
+    172.16.0.9 - bob [27/Sep/2025:15:33:21 +0000] "DELETE /dashboard HTTP/1.1" 500 1638 "PostmanRuntime/7.26.8"
+    172.16.0.9 - charlie [27/Sep/2025:15:27:47 +0000] "POST /admin HTTP/1.1" 500 4831 "PostmanRuntime/7.26.8"
+
+192.168.1.10:
+    192.168.1.10 - dave [27/Sep/2025:15:26:46 +0000] "DELETE /admin HTTP/1.1" 500 870 "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)"
+    192.168.1.10 - dave [27/Sep/2025:15:24:09 +0000] "POST /dashboard HTTP/1.1" 500 393 "PostmanRuntime/7.26.8"
+    192.168.1.10 - charlie [27/Sep/2025:15:24:55 +0000] "PUT /status HTTP/1.1" 500 3830 "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
+    192.168.1.10 - bob [27/Sep/2025:15:27:39 +0000] "POST /admin HTTP/1.1" 500 4036 "PostmanRuntime/7.26.8"
+    192.168.1.10 - charlie [27/Sep/2025:15:32:21 +0000] "PUT /status HTTP/1.1" 500 1131 "Mozilla/5.0 (Windows NT 10.0; Win64; x64)"
